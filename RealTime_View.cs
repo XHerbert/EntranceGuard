@@ -17,17 +17,15 @@ namespace Demo
     public partial class RealTime_View : CCSkinMain
     {
 
-        #region 窗体事件
 
-        #region 常量定义
+        #region 变量常量定义
         const int WIDTH = 100;
         const int HEIGHT = 120;
         const int MARGIN = 20;
         const int LINECOUNT = 7;
-        #endregion
-
         Control[] controllerList;
         bool postBack = false;
+        #endregion
 
         #region  构造函数
 
@@ -40,25 +38,19 @@ namespace Demo
 
         #endregion  构造函数
 
-
         #region 窗体加载
 
         private void RealTime_View_Load(object sender, EventArgs e)
         {
             InitdrvCSS(dgv_Actions);
-            //Init_DoorGroup();
             InitControllers();
             InitData();
             this.timer_GetData.Enabled = true;
             this.timer_GetData.Start();
             this.timer_GetData.Tick += new EventHandler(timerSetTime_Tick);
-
-
-            InitTag();
         }
 
         #endregion 窗体加载
-
 
         #region 窗体关闭事件
 
@@ -79,7 +71,6 @@ namespace Demo
         }
 
         #endregion 窗体关闭事件
-
 
         #region 开门操作
 
@@ -169,15 +160,6 @@ namespace Demo
 
         #endregion 开门操作
 
-
-
-        #endregion 窗体事件
-
-
-
-        #region 私有方法begin
-
-
         #region 初始化控制器 - XUHONGBO
 
         private void InitControllers()
@@ -198,8 +180,7 @@ namespace Demo
             this.groupBox1.Controls.AddRange(controllerList);
 
         }
-
-
+        
         private Controller.Controller CreateController(string name,int status,Point location)
         {
             Controller.Controller controller = new Controller.Controller();
@@ -230,8 +211,7 @@ namespace Demo
             //this.RenameFolder += UpdateFolder;
             //FitScreen();
         }
-
-
+        
         private void InitData()
         {
             string query = "select Controller_ID,Controller_Name from Controller_Info";
@@ -242,18 +222,19 @@ namespace Demo
             DataTable dtDoor = DataAccess.dataTable(queryDoor);
             BindDoorData(dtDoor,doorDrop);
             postBack = true;
+            //openAlways_CheckedChanged(null,null);
+            //int door = int.Parse(doorDrop.SelectedValue.ToString());
+            //int controller = int.Parse(controllerDrop.SelectedValue.ToString());
+            //IsAlwaysOpen(controller, door, openAlways.Checked);
         }
-
-
+        
         private void BindControllerData(DataTable dt,ComboBox box)
         {
-            //box.Items.Clear();
             box.DataSource = dt;
             box.DisplayMember = "Controller_Name";
             box.ValueMember = "Controller_ID";
         }
-
-
+        
         private void BindDoorData(DataTable dt, ComboBox box)
         {
             //box.Items.Clear();
@@ -275,18 +256,44 @@ namespace Demo
 
         private void doorDrop_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //MessageBox.Show();
-
-            Console.WriteLine(doorDrop.SelectedValue.ToString());
+            if (!postBack) return;
+            int door = int.Parse(doorDrop.SelectedValue.ToString());
+            int controller = int.Parse(controllerDrop.SelectedValue.ToString());
+            string cmd = string.Format("select Is_AlwaysOpen from Door_Info where Controller_ID={0} and ID={1}",controller,door);
+            int result=DataAccess.ExecuteScalar(cmd);
+            pic_Open.Visible = (result==1);
+            pic_Close.Visible = (result == 0);
+            Console.WriteLine(result);
+            openAlways.Checked = (result==1);
         }
+
+        private void openAlways_CheckedChanged(object sender, EventArgs e)
+        {
+            int door = int.Parse(doorDrop.SelectedValue.ToString());
+            int controller = int.Parse(controllerDrop.SelectedValue.ToString());
+            IsAlwaysOpen(controller, door, openAlways.Checked);
+            doorDrop_SelectedIndexChanged(null, null);
+        }
+
+        private void IsAlwaysOpen(int controller, int door, bool isOpen)
+        {
+            string sql = "update Door_Info set Is_AlwaysOpen=";
+            if (isOpen)
+            {
+                sql += "1";
+            }
+            else
+            {
+                sql += "0";
+            }
+            sql += " where ID=" + door + " and Controller_ID=" + controller;
+            DataAccess.excuteSql(sql);
+        }
+
+
         #endregion
 
-
-
         #region 门群组显隐
-
-
-
 
         private void Init_DoorGroup()
         {
@@ -609,29 +616,5 @@ namespace Demo
 
         #endregion 从控制器读取进出资料
 
-        #endregion 私有方法end
-
-        private void openAlways_CheckedChanged(object sender, EventArgs e)
-        {
-            int door = int.Parse(doorDrop.SelectedValue.ToString());
-            int controller = int.Parse(controllerDrop.SelectedValue.ToString());
-
-            IsAlwaysOpen(controller,door, openAlways.Checked);
-        }
-
-        private void IsAlwaysOpen(int controller,int door,bool isOpen)
-        {
-            string sql = "update Door_Info set Is_AlwaysOpen=";
-            if (isOpen)
-            {
-                sql += "1";
-            }
-            else
-            {
-                sql += "0";
-            }
-            sql += " where ID="+door+" and Controller_ID="+controller;
-            DataAccess.excuteSql(sql);
-        }
     }
 }

@@ -223,8 +223,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="360logo.ico" />
+    <None Include="Resources\Open.png" />
     <None Include="Resources\Controller.png" />
     <None Include="Resources\Controller1.png" />
+    <None Include="Resources\Close.png" />
     <Content Include="Resources\default_head.jpg" />
     <None Include="Resources\未标题-1.jpg" />
     <None Include="Resources\use.jpg" />

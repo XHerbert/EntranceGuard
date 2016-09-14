@@ -47,8 +47,12 @@ namespace Demo
             this.openAlways = new System.Windows.Forms.CheckBox();
             this.openDoor = new System.Windows.Forms.Button();
             this.doorDrop = new System.Windows.Forms.ComboBox();
+            this.pic_Close = new System.Windows.Forms.PictureBox();
+            this.pic_Open = new System.Windows.Forms.PictureBox();
             this.skinGroupBox9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Actions)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Close)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Open)).BeginInit();
             this.SuspendLayout();
             // 
             // skinGroupBox9
@@ -207,12 +211,36 @@ namespace Demo
             this.doorDrop.TabIndex = 115;
             this.doorDrop.SelectedIndexChanged += new System.EventHandler(this.doorDrop_SelectedIndexChanged);
             // 
+            // pic_Close
+            // 
+            this.pic_Close.Image = global::Demo.Properties.Resources.Open;
+            this.pic_Close.Location = new System.Drawing.Point(658, 699);
+            this.pic_Close.Margin = new System.Windows.Forms.Padding(0);
+            this.pic_Close.Name = "pic_Close";
+            this.pic_Close.Size = new System.Drawing.Size(100, 134);
+            this.pic_Close.TabIndex = 116;
+            this.pic_Close.TabStop = false;
+            this.pic_Close.Visible = false;
+            // 
+            // pic_Open
+            // 
+            this.pic_Open.Image = global::Demo.Properties.Resources.Close;
+            this.pic_Open.Location = new System.Drawing.Point(658, 699);
+            this.pic_Open.Margin = new System.Windows.Forms.Padding(0);
+            this.pic_Open.Name = "pic_Open";
+            this.pic_Open.Size = new System.Drawing.Size(100, 134);
+            this.pic_Open.TabIndex = 117;
+            this.pic_Open.TabStop = false;
+            this.pic_Open.Visible = false;
+            // 
             // RealTime_View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1280, 837);
+            this.Controls.Add(this.pic_Open);
+            this.Controls.Add(this.pic_Close);
             this.Controls.Add(this.doorDrop);
             this.Controls.Add(this.openDoor);
             this.Controls.Add(this.openAlways);
@@ -231,6 +259,8 @@ namespace Demo
             this.Load += new System.EventHandler(this.RealTime_View_Load);
             this.skinGroupBox9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Actions)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Close)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Open)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -250,5 +280,7 @@ namespace Demo
         private System.Windows.Forms.CheckBox openAlways;
         private System.Windows.Forms.Button openDoor;
         private System.Windows.Forms.ComboBox doorDrop;
+        private System.Windows.Forms.PictureBox pic_Close;
+        private System.Windows.Forms.PictureBox pic_Open;
     }
 }
