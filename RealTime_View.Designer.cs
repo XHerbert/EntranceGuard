@@ -49,6 +49,8 @@ namespace Demo
             this.doorDrop = new System.Windows.Forms.ComboBox();
             this.pic_Close = new System.Windows.Forms.PictureBox();
             this.pic_Open = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.skinGroupBox9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Actions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Close)).BeginInit();
@@ -170,9 +172,9 @@ namespace Demo
             this.controllerDrop.FormattingEnabled = true;
             this.controllerDrop.Items.AddRange(new object[] {
             "-- 请选择控制器--"});
-            this.controllerDrop.Location = new System.Drawing.Point(24, 674);
+            this.controllerDrop.Location = new System.Drawing.Point(81, 674);
             this.controllerDrop.Name = "controllerDrop";
-            this.controllerDrop.Size = new System.Drawing.Size(226, 20);
+            this.controllerDrop.Size = new System.Drawing.Size(169, 20);
             this.controllerDrop.TabIndex = 112;
             this.controllerDrop.SelectedIndexChanged += new System.EventHandler(this.controllerDrop_SelectedIndexChanged);
             // 
@@ -205,9 +207,9 @@ namespace Demo
             this.doorDrop.FormattingEnabled = true;
             this.doorDrop.Items.AddRange(new object[] {
             "--请选择门--"});
-            this.doorDrop.Location = new System.Drawing.Point(285, 674);
+            this.doorDrop.Location = new System.Drawing.Point(335, 674);
             this.doorDrop.Name = "doorDrop";
-            this.doorDrop.Size = new System.Drawing.Size(216, 20);
+            this.doorDrop.Size = new System.Drawing.Size(169, 20);
             this.doorDrop.TabIndex = 115;
             this.doorDrop.SelectedIndexChanged += new System.EventHandler(this.doorDrop_SelectedIndexChanged);
             // 
@@ -233,12 +235,36 @@ namespace Demo
             this.pic_Open.TabStop = false;
             this.pic_Open.Visible = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.ForeColor = System.Drawing.Color.Maroon;
+            this.label1.Location = new System.Drawing.Point(26, 678);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 12);
+            this.label1.TabIndex = 118;
+            this.label1.Text = "控制器";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.ForeColor = System.Drawing.Color.Maroon;
+            this.label2.Location = new System.Drawing.Point(282, 678);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(17, 12);
+            this.label2.TabIndex = 119;
+            this.label2.Text = "门";
+            // 
             // RealTime_View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1280, 837);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.pic_Open);
             this.Controls.Add(this.pic_Close);
             this.Controls.Add(this.doorDrop);
@@ -262,6 +288,7 @@ namespace Demo
             ((System.ComponentModel.ISupportInitialize)(this.pic_Close)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Open)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -282,5 +309,7 @@ namespace Demo
         private System.Windows.Forms.ComboBox doorDrop;
         private System.Windows.Forms.PictureBox pic_Close;
         private System.Windows.Forms.PictureBox pic_Open;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

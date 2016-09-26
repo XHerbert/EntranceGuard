@@ -263,7 +263,8 @@ namespace RST_ReadSDData
                                     string AP = GetCellValue(row.GetCell(11));
                                     string Animal_Species = GetCellValue(row.GetCell(12));
                                     string Animal_Count = GetCellValue(row.GetCell(13));
-                                    Approval_Date =Convert.ToDateTime(Approval_Date.ToString()).ToString();
+                                    //Approval_Date =Convert.ToDateTime(Approval_Date.ToString()).ToString();
+                                    Approval_Date = Approval_Date.ToString();
 
                                     string sql = "select max(ti.id) from test_info ti ";
                                     int New_ID = Convert.ToInt32(DataAccess.ExecuteScalar(sql)) + 1 + i;
