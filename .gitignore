@@ -49,3 +49,12 @@ Temporary Items
 *.xls
 bin\*
 obj\*
+*.cache
+*.txt
+*.resources
+*.jpg
+bin/Debug/Demo.vshost.exe.manifest
+*.xlsx
+*.mdb
+*.config
+*.zip

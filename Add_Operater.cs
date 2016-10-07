@@ -100,7 +100,7 @@ namespace Demo
                         MessageBoxEx.Show("已经超过最大设备数！");
                         return;
                     }
-                    string sql = "select max(hi.id) from Controller_Info hi ";
+                    string sql = "select max(hi.ID) from Controller_Info hi ";
 
                     int New_ID = Convert.ToInt32(DataAccess.ExecuteScalar(sql)) + 1;
 
@@ -108,10 +108,11 @@ namespace Demo
 
                     int New_Door = Convert.ToInt32(DataAccess.ExecuteScalar(sql_door_count)) + 1;
                     string control_name = this.txt_control_name.Text.Trim();
-                    string control_NO = this.txt_cotrol_NO.Text.Trim();
+                    //string control_NO = this.txt_cotrol_NO.Text.Trim();
+                    string control_NO = (New_ID).ToString();
                     string seri_no = this.cb_Serialport.Text.Substring(3, this.cb_Serialport.Text.Trim().Length - 3);
                     string bondrate = this.cb_bote.Text;
-                    int door_count = Count(this.cb_door_type.SelectedIndex);
+                    int door_count = Count(this.cb_door_type.SelectedIndex);//选择的门类型，不同的类型门数量不同
                     int IsSync_date = cb_IsSync.Checked ? 1 : 0;
                     int area_id = Convert.ToInt32(this.cb_area.SelectedValue);
                     string adress_485 = "0";
@@ -119,9 +120,11 @@ namespace Demo
                     List<string> list_SQL = new List<string>();
                     string T_Sql = string.Empty;
 
+
+                    //修改数据后，为什么要改变ID？？？？
                     if (_IsModify)
                     {
-                        T_Sql = @"update controller_info set controller_name='" + control_name + "',controller_id=" + control_NO + ",door_count=" + door_count + ",communication_mode='RS485/RS232',serialNO=" + seri_no + ",area_id=" + area_id + ",rs485_adress=" + adress_485 + ",content='" + content + "',bondrode='" + bondrate + "',issync_date=" + IsSync_date + " where id=" + _ID;
+                        T_Sql = @"update controller_info set controller_name='" + control_name + "',door_count=" + door_count + ",communication_mode='RS485/RS232',serialNO=" + seri_no + ",area_id=" + area_id + ",rs485_adress=" + adress_485 + ",content='" + content + "',bondrode='" + bondrate + "',issync_date=" + IsSync_date + " where id=" + _ID;
 
                         if (DataAccess.excuteSqlAndReturnValues(T_Sql) > 0)
                         {
@@ -140,7 +143,7 @@ namespace Demo
                         string sql_add_door = "";
                         for (int i = 0; i < door_count; i++)
                         {
-                            sql_add_door = "insert into door_info values(" + New_Door + "," + New_ID + ",'" + (control_name + i.ToString()) + "'," + (i + 1) + ",1,0,0,'添加设置自动添加的门');";
+                            sql_add_door = "insert into door_info values(" + New_Door + "," + New_ID + ",'" + (control_name + i.ToString()) + "'," + (i + 1) + ",1,0,0,'添加设置自动添加的门',0);";
                             list_SQL.Add(sql_add_door);
                             New_Door++;
                         }

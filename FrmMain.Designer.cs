@@ -7340,7 +7340,7 @@ namespace Demo
             this.tp_Cotroller.Location = new System.Drawing.Point(0, 30);
             this.tp_Cotroller.Margin = new System.Windows.Forms.Padding(0);
             this.tp_Cotroller.Name = "tp_Cotroller";
-            this.tp_Cotroller.Size = new System.Drawing.Size(1024, 635);
+            this.tp_Cotroller.Size = new System.Drawing.Size(200, 0);
             this.tp_Cotroller.TabIndex = 0;
             this.tp_Cotroller.Text = "设备";
             // 
@@ -7429,7 +7429,7 @@ namespace Demo
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.DataPropertyName = "RS485_Adress";
-            this.dataGridViewTextBoxColumn8.HeaderText = "RS485地地";
+            this.dataGridViewTextBoxColumn8.HeaderText = "RS485地址";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.ReadOnly = true;
             // 
@@ -8108,6 +8108,7 @@ namespace Demo
             this.cb32.Tag = "1";
             this.cb32.Text = "常开";
             this.cb32.UseVisualStyleBackColor = false;
+            this.cb32.Visible = false;
             // 
             // door32
             // 
@@ -8117,6 +8118,7 @@ namespace Demo
             this.door32.Size = new System.Drawing.Size(20, 28);
             this.door32.TabIndex = 105;
             this.door32.UseVisualStyleBackColor = true;
+            this.door32.Visible = false;
             // 
             // btn_OpenDoor32
             // 
@@ -8129,6 +8131,7 @@ namespace Demo
             this.btn_OpenDoor32.Tag = "32";
             this.btn_OpenDoor32.Text = "开门";
             this.btn_OpenDoor32.UseVisualStyleBackColor = true;
+            this.btn_OpenDoor32.Visible = false;
             this.btn_OpenDoor32.Click += new System.EventHandler(this.btn_OpenDoor1_Click);
             // 
             // cb31
@@ -8150,6 +8153,7 @@ namespace Demo
             this.cb31.Tag = "1";
             this.cb31.Text = "常开";
             this.cb31.UseVisualStyleBackColor = false;
+            this.cb31.Visible = false;
             // 
             // door31
             // 
@@ -8159,6 +8163,7 @@ namespace Demo
             this.door31.Size = new System.Drawing.Size(20, 28);
             this.door31.TabIndex = 102;
             this.door31.UseVisualStyleBackColor = true;
+            this.door31.Visible = false;
             // 
             // btn_OpenDoor31
             // 
@@ -8171,6 +8176,7 @@ namespace Demo
             this.btn_OpenDoor31.Tag = "31";
             this.btn_OpenDoor31.Text = "开门";
             this.btn_OpenDoor31.UseVisualStyleBackColor = true;
+            this.btn_OpenDoor31.Visible = false;
             this.btn_OpenDoor31.Click += new System.EventHandler(this.btn_OpenDoor1_Click);
             // 
             // cb30
@@ -8192,6 +8198,7 @@ namespace Demo
             this.cb30.Tag = "1";
             this.cb30.Text = "常开";
             this.cb30.UseVisualStyleBackColor = false;
+            this.cb30.Visible = false;
             // 
             // door30
             // 
@@ -8201,6 +8208,7 @@ namespace Demo
             this.door30.Size = new System.Drawing.Size(20, 28);
             this.door30.TabIndex = 99;
             this.door30.UseVisualStyleBackColor = true;
+            this.door30.Visible = false;
             // 
             // btn_OpenDoor30
             // 
@@ -8213,6 +8221,7 @@ namespace Demo
             this.btn_OpenDoor30.Tag = "30";
             this.btn_OpenDoor30.Text = "开门";
             this.btn_OpenDoor30.UseVisualStyleBackColor = true;
+            this.btn_OpenDoor30.Visible = false;
             this.btn_OpenDoor30.Click += new System.EventHandler(this.btn_OpenDoor1_Click);
             // 
             // cb29
@@ -8234,6 +8243,7 @@ namespace Demo
             this.cb29.Tag = "1";
             this.cb29.Text = "常开";
             this.cb29.UseVisualStyleBackColor = false;
+            this.cb29.Visible = false;
             // 
             // door29
             // 
@@ -8243,6 +8253,7 @@ namespace Demo
             this.door29.Size = new System.Drawing.Size(20, 28);
             this.door29.TabIndex = 0;
             this.door29.UseVisualStyleBackColor = true;
+            this.door29.Visible = false;
             // 
             // btn_OpenDoor29
             // 
@@ -8255,6 +8266,7 @@ namespace Demo
             this.btn_OpenDoor29.Tag = "29";
             this.btn_OpenDoor29.Text = "开门";
             this.btn_OpenDoor29.UseVisualStyleBackColor = true;
+            this.btn_OpenDoor29.Visible = false;
             this.btn_OpenDoor29.Click += new System.EventHandler(this.btn_OpenDoor1_Click);
             // 
             // door_Group7
@@ -8305,6 +8317,7 @@ namespace Demo
             this.cb28.Tag = "1";
             this.cb28.Text = "常开";
             this.cb28.UseVisualStyleBackColor = false;
+            this.cb28.Visible = false;
             // 
             // door28
             // 
@@ -8314,6 +8327,7 @@ namespace Demo
             this.door28.Size = new System.Drawing.Size(20, 28);
             this.door28.TabIndex = 105;
             this.door28.UseVisualStyleBackColor = true;
+            this.door28.Visible = false;
             // 
             // btn_OpenDoor28
             // 
@@ -8326,6 +8340,7 @@ namespace Demo
             this.btn_OpenDoor28.Tag = "28";
             this.btn_OpenDoor28.Text = "开门";
             this.btn_OpenDoor28.UseVisualStyleBackColor = true;
+            this.btn_OpenDoor28.Visible = false;
             this.btn_OpenDoor28.Click += new System.EventHandler(this.btn_OpenDoor1_Click);
             // 
             // cb27
@@ -8347,6 +8362,7 @@ namespace Demo
             this.cb27.Tag = "1";
             this.cb27.Text = "常开";
             this.cb27.UseVisualStyleBackColor = false;
+            this.cb27.Visible = false;
             // 
             // door27
             // 
@@ -8356,6 +8372,7 @@ namespace Demo
             this.door27.Size = new System.Drawing.Size(20, 28);
             this.door27.TabIndex = 102;
             this.door27.UseVisualStyleBackColor = true;
+            this.door27.Visible = false;
             // 
             // btn_OpenDoor27
             // 
@@ -8368,6 +8385,7 @@ namespace Demo
             this.btn_OpenDoor27.Tag = "27";
             this.btn_OpenDoor27.Text = "开门";
             this.btn_OpenDoor27.UseVisualStyleBackColor = true;
+            this.btn_OpenDoor27.Visible = false;
             this.btn_OpenDoor27.Click += new System.EventHandler(this.btn_OpenDoor1_Click);
             // 
             // cb26
@@ -8389,6 +8407,7 @@ namespace Demo
             this.cb26.Tag = "1";
             this.cb26.Text = "常开";
             this.cb26.UseVisualStyleBackColor = false;
+            this.cb26.Visible = false;
             // 
             // door26
             // 
@@ -8398,6 +8417,7 @@ namespace Demo
             this.door26.Size = new System.Drawing.Size(20, 28);
             this.door26.TabIndex = 99;
             this.door26.UseVisualStyleBackColor = true;
+            this.door26.Visible = false;
             // 
             // btn_OpenDoor26
             // 
@@ -8410,6 +8430,7 @@ namespace Demo
             this.btn_OpenDoor26.Tag = "26";
             this.btn_OpenDoor26.Text = "开门";
             this.btn_OpenDoor26.UseVisualStyleBackColor = true;
+            this.btn_OpenDoor26.Visible = false;
             this.btn_OpenDoor26.Click += new System.EventHandler(this.btn_OpenDoor1_Click);
             // 
             // cb25
@@ -8431,6 +8452,7 @@ namespace Demo
             this.cb25.Tag = "1";
             this.cb25.Text = "常开";
             this.cb25.UseVisualStyleBackColor = false;
+            this.cb25.Visible = false;
             // 
             // door25
             // 
@@ -8440,6 +8462,7 @@ namespace Demo
             this.door25.Size = new System.Drawing.Size(20, 28);
             this.door25.TabIndex = 0;
             this.door25.UseVisualStyleBackColor = true;
+            this.door25.Visible = false;
             // 
             // btn_OpenDoor25
             // 
@@ -8452,6 +8475,7 @@ namespace Demo
             this.btn_OpenDoor25.Tag = "25";
             this.btn_OpenDoor25.Text = "开门";
             this.btn_OpenDoor25.UseVisualStyleBackColor = true;
+            this.btn_OpenDoor25.Visible = false;
             this.btn_OpenDoor25.Click += new System.EventHandler(this.btn_OpenDoor1_Click);
             // 
             // door_Group6
@@ -8502,6 +8526,7 @@ namespace Demo
             this.cb24.Tag = "1";
             this.cb24.Text = "常开";
             this.cb24.UseVisualStyleBackColor = false;
+            this.cb24.Visible = false;
             // 
             // door24
             // 
@@ -8511,6 +8536,7 @@ namespace Demo
             this.door24.Size = new System.Drawing.Size(20, 28);
             this.door24.TabIndex = 105;
             this.door24.UseVisualStyleBackColor = true;
+            this.door24.Visible = false;
             // 
             // btn_OpenDoor24
             // 
@@ -8523,6 +8549,7 @@ namespace Demo
             this.btn_OpenDoor24.Tag = "24";
             this.btn_OpenDoor24.Text = "开门";
             this.btn_OpenDoor24.UseVisualStyleBackColor = true;
+            this.btn_OpenDoor24.Visible = false;
             this.btn_OpenDoor24.Click += new System.EventHandler(this.btn_OpenDoor1_Click);
             // 
             // cb23
@@ -8544,6 +8571,7 @@ namespace Demo
             this.cb23.Tag = "1";
             this.cb23.Text = "常开";
             this.cb23.UseVisualStyleBackColor = false;
+            this.cb23.Visible = false;
             // 
             // door23
             // 
@@ -8553,6 +8581,7 @@ namespace Demo
             this.door23.Size = new System.Drawing.Size(20, 28);
             this.door23.TabIndex = 102;
             this.door23.UseVisualStyleBackColor = true;
+            this.door23.Visible = false;
             // 
             // btn_OpenDoor23
             // 
@@ -8565,6 +8594,7 @@ namespace Demo
             this.btn_OpenDoor23.Tag = "23";
             this.btn_OpenDoor23.Text = "开门";
             this.btn_OpenDoor23.UseVisualStyleBackColor = true;
+            this.btn_OpenDoor23.Visible = false;
             this.btn_OpenDoor23.Click += new System.EventHandler(this.btn_OpenDoor1_Click);
             // 
             // cb22
@@ -8586,6 +8616,7 @@ namespace Demo
             this.cb22.Tag = "1";
             this.cb22.Text = "常开";
             this.cb22.UseVisualStyleBackColor = false;
+            this.cb22.Visible = false;
             // 
             // door22
             // 
@@ -8595,6 +8626,7 @@ namespace Demo
             this.door22.Size = new System.Drawing.Size(20, 28);
             this.door22.TabIndex = 99;
             this.door22.UseVisualStyleBackColor = true;
+            this.door22.Visible = false;
             // 
             // btn_OpenDoor22
             // 
@@ -8607,6 +8639,7 @@ namespace Demo
             this.btn_OpenDoor22.Tag = "22";
             this.btn_OpenDoor22.Text = "开门";
             this.btn_OpenDoor22.UseVisualStyleBackColor = true;
+            this.btn_OpenDoor22.Visible = false;
             this.btn_OpenDoor22.Click += new System.EventHandler(this.btn_OpenDoor1_Click);
             // 
             // cb21
@@ -8628,6 +8661,7 @@ namespace Demo
             this.cb21.Tag = "1";
             this.cb21.Text = "常开";
             this.cb21.UseVisualStyleBackColor = false;
+            this.cb21.Visible = false;
             // 
             // door21
             // 
@@ -8637,6 +8671,7 @@ namespace Demo
             this.door21.Size = new System.Drawing.Size(20, 28);
             this.door21.TabIndex = 0;
             this.door21.UseVisualStyleBackColor = true;
+            this.door21.Visible = false;
             // 
             // btn_OpenDoor21
             // 
@@ -8649,6 +8684,7 @@ namespace Demo
             this.btn_OpenDoor21.Tag = "21";
             this.btn_OpenDoor21.Text = "开门";
             this.btn_OpenDoor21.UseVisualStyleBackColor = true;
+            this.btn_OpenDoor21.Visible = false;
             this.btn_OpenDoor21.Click += new System.EventHandler(this.btn_OpenDoor1_Click);
             // 
             // door_Group5
@@ -8699,6 +8735,7 @@ namespace Demo
             this.cb20.Tag = "1";
             this.cb20.Text = "常开";
             this.cb20.UseVisualStyleBackColor = false;
+            this.cb20.Visible = false;
             // 
             // door20
             // 
@@ -8708,6 +8745,7 @@ namespace Demo
             this.door20.Size = new System.Drawing.Size(20, 28);
             this.door20.TabIndex = 105;
             this.door20.UseVisualStyleBackColor = true;
+            this.door20.Visible = false;
             // 
             // btn_OpenDoor20
             // 
@@ -8720,6 +8758,7 @@ namespace Demo
             this.btn_OpenDoor20.Tag = "20";
             this.btn_OpenDoor20.Text = "开门";
             this.btn_OpenDoor20.UseVisualStyleBackColor = true;
+            this.btn_OpenDoor20.Visible = false;
             this.btn_OpenDoor20.Click += new System.EventHandler(this.btn_OpenDoor1_Click);
             // 
             // cb19
@@ -8741,6 +8780,7 @@ namespace Demo
             this.cb19.Tag = "1";
             this.cb19.Text = "常开";
             this.cb19.UseVisualStyleBackColor = false;
+            this.cb19.Visible = false;
             // 
             // door19
             // 
@@ -8750,6 +8790,7 @@ namespace Demo
             this.door19.Size = new System.Drawing.Size(20, 28);
             this.door19.TabIndex = 102;
             this.door19.UseVisualStyleBackColor = true;
+            this.door19.Visible = false;
             // 
             // btn_OpenDoor19
             // 
@@ -8762,6 +8803,7 @@ namespace Demo
             this.btn_OpenDoor19.Tag = "19";
             this.btn_OpenDoor19.Text = "开门";
             this.btn_OpenDoor19.UseVisualStyleBackColor = true;
+            this.btn_OpenDoor19.Visible = false;
             this.btn_OpenDoor19.Click += new System.EventHandler(this.btn_OpenDoor1_Click);
             // 
             // cb18
@@ -8783,6 +8825,7 @@ namespace Demo
             this.cb18.Tag = "1";
             this.cb18.Text = "常开";
             this.cb18.UseVisualStyleBackColor = false;
+            this.cb18.Visible = false;
             // 
             // door18
             // 
@@ -8792,6 +8835,7 @@ namespace Demo
             this.door18.Size = new System.Drawing.Size(20, 28);
             this.door18.TabIndex = 99;
             this.door18.UseVisualStyleBackColor = true;
+            this.door18.Visible = false;
             // 
             // btn_OpenDoor18
             // 
@@ -8804,6 +8848,7 @@ namespace Demo
             this.btn_OpenDoor18.Tag = "18";
             this.btn_OpenDoor18.Text = "开门";
             this.btn_OpenDoor18.UseVisualStyleBackColor = true;
+            this.btn_OpenDoor18.Visible = false;
             this.btn_OpenDoor18.Click += new System.EventHandler(this.btn_OpenDoor1_Click);
             // 
             // cb17
@@ -8825,6 +8870,7 @@ namespace Demo
             this.cb17.Tag = "1";
             this.cb17.Text = "常开";
             this.cb17.UseVisualStyleBackColor = false;
+            this.cb17.Visible = false;
             // 
             // door17
             // 
@@ -8834,6 +8880,7 @@ namespace Demo
             this.door17.Size = new System.Drawing.Size(20, 28);
             this.door17.TabIndex = 0;
             this.door17.UseVisualStyleBackColor = true;
+            this.door17.Visible = false;
             // 
             // btn_OpenDoor17
             // 
@@ -8846,6 +8893,7 @@ namespace Demo
             this.btn_OpenDoor17.Tag = "17";
             this.btn_OpenDoor17.Text = "开门";
             this.btn_OpenDoor17.UseVisualStyleBackColor = true;
+            this.btn_OpenDoor17.Visible = false;
             this.btn_OpenDoor17.Click += new System.EventHandler(this.btn_OpenDoor1_Click);
             // 
             // door_Group4
@@ -8896,6 +8944,7 @@ namespace Demo
             this.cb16.Tag = "1";
             this.cb16.Text = "常开";
             this.cb16.UseVisualStyleBackColor = false;
+            this.cb16.Visible = false;
             // 
             // door16
             // 
@@ -8905,6 +8954,7 @@ namespace Demo
             this.door16.Size = new System.Drawing.Size(20, 28);
             this.door16.TabIndex = 105;
             this.door16.UseVisualStyleBackColor = true;
+            this.door16.Visible = false;
             // 
             // btn_OpenDoor16
             // 
@@ -8917,6 +8967,7 @@ namespace Demo
             this.btn_OpenDoor16.Tag = "16";
             this.btn_OpenDoor16.Text = "开门";
             this.btn_OpenDoor16.UseVisualStyleBackColor = true;
+            this.btn_OpenDoor16.Visible = false;
             this.btn_OpenDoor16.Click += new System.EventHandler(this.btn_OpenDoor1_Click);
             // 
             // cb15
@@ -8938,6 +8989,7 @@ namespace Demo
             this.cb15.Tag = "1";
             this.cb15.Text = "常开";
             this.cb15.UseVisualStyleBackColor = false;
+            this.cb15.Visible = false;
             // 
             // door15
             // 
@@ -8947,6 +8999,7 @@ namespace Demo
             this.door15.Size = new System.Drawing.Size(20, 28);
             this.door15.TabIndex = 102;
             this.door15.UseVisualStyleBackColor = true;
+            this.door15.Visible = false;
             // 
             // btn_OpenDoor15
             // 
@@ -8959,6 +9012,7 @@ namespace Demo
             this.btn_OpenDoor15.Tag = "15";
             this.btn_OpenDoor15.Text = "开门";
             this.btn_OpenDoor15.UseVisualStyleBackColor = true;
+            this.btn_OpenDoor15.Visible = false;
             this.btn_OpenDoor15.Click += new System.EventHandler(this.btn_OpenDoor1_Click);
             // 
             // cb14
@@ -8980,6 +9034,7 @@ namespace Demo
             this.cb14.Tag = "1";
             this.cb14.Text = "常开";
             this.cb14.UseVisualStyleBackColor = false;
+            this.cb14.Visible = false;
             // 
             // door14
             // 
@@ -8989,6 +9044,7 @@ namespace Demo
             this.door14.Size = new System.Drawing.Size(20, 28);
             this.door14.TabIndex = 99;
             this.door14.UseVisualStyleBackColor = true;
+            this.door14.Visible = false;
             // 
             // btn_OpenDoor14
             // 
@@ -9001,6 +9057,7 @@ namespace Demo
             this.btn_OpenDoor14.Tag = "14";
             this.btn_OpenDoor14.Text = "开门";
             this.btn_OpenDoor14.UseVisualStyleBackColor = true;
+            this.btn_OpenDoor14.Visible = false;
             this.btn_OpenDoor14.Click += new System.EventHandler(this.btn_OpenDoor1_Click);
             // 
             // cb13
@@ -9022,6 +9079,7 @@ namespace Demo
             this.cb13.Tag = "1";
             this.cb13.Text = "常开";
             this.cb13.UseVisualStyleBackColor = false;
+            this.cb13.Visible = false;
             // 
             // door13
             // 
@@ -9031,6 +9089,7 @@ namespace Demo
             this.door13.Size = new System.Drawing.Size(20, 28);
             this.door13.TabIndex = 0;
             this.door13.UseVisualStyleBackColor = true;
+            this.door13.Visible = false;
             // 
             // btn_OpenDoor13
             // 
@@ -9043,6 +9102,7 @@ namespace Demo
             this.btn_OpenDoor13.Tag = "13";
             this.btn_OpenDoor13.Text = "开门";
             this.btn_OpenDoor13.UseVisualStyleBackColor = true;
+            this.btn_OpenDoor13.Visible = false;
             this.btn_OpenDoor13.Click += new System.EventHandler(this.btn_OpenDoor1_Click);
             // 
             // door_Group3
@@ -9093,6 +9153,7 @@ namespace Demo
             this.cb12.Tag = "1";
             this.cb12.Text = "常开";
             this.cb12.UseVisualStyleBackColor = false;
+            this.cb12.Visible = false;
             // 
             // door12
             // 
@@ -9102,6 +9163,7 @@ namespace Demo
             this.door12.Size = new System.Drawing.Size(20, 28);
             this.door12.TabIndex = 105;
             this.door12.UseVisualStyleBackColor = true;
+            this.door12.Visible = false;
             // 
             // btn_OpenDoor12
             // 
@@ -9114,6 +9176,7 @@ namespace Demo
             this.btn_OpenDoor12.Tag = "12";
             this.btn_OpenDoor12.Text = "开门";
             this.btn_OpenDoor12.UseVisualStyleBackColor = true;
+            this.btn_OpenDoor12.Visible = false;
             this.btn_OpenDoor12.Click += new System.EventHandler(this.btn_OpenDoor1_Click);
             // 
             // cb11
@@ -9135,6 +9198,7 @@ namespace Demo
             this.cb11.Tag = "1";
             this.cb11.Text = "常开";
             this.cb11.UseVisualStyleBackColor = false;
+            this.cb11.Visible = false;
             // 
             // door11
             // 
@@ -9144,6 +9208,7 @@ namespace Demo
             this.door11.Size = new System.Drawing.Size(20, 28);
             this.door11.TabIndex = 102;
             this.door11.UseVisualStyleBackColor = true;
+            this.door11.Visible = false;
             // 
             // btn_OpenDoor11
             // 
@@ -9156,6 +9221,7 @@ namespace Demo
             this.btn_OpenDoor11.Tag = "11";
             this.btn_OpenDoor11.Text = "开门";
             this.btn_OpenDoor11.UseVisualStyleBackColor = true;
+            this.btn_OpenDoor11.Visible = false;
             this.btn_OpenDoor11.Click += new System.EventHandler(this.btn_OpenDoor1_Click);
             // 
             // cb10
@@ -9177,6 +9243,7 @@ namespace Demo
             this.cb10.Tag = "1";
             this.cb10.Text = "常开";
             this.cb10.UseVisualStyleBackColor = false;
+            this.cb10.Visible = false;
             // 
             // door10
             // 
@@ -9186,6 +9253,7 @@ namespace Demo
             this.door10.Size = new System.Drawing.Size(20, 28);
             this.door10.TabIndex = 99;
             this.door10.UseVisualStyleBackColor = true;
+            this.door10.Visible = false;
             // 
             // btn_OpenDoor10
             // 
@@ -9198,6 +9266,7 @@ namespace Demo
             this.btn_OpenDoor10.Tag = "10";
             this.btn_OpenDoor10.Text = "开门";
             this.btn_OpenDoor10.UseVisualStyleBackColor = true;
+            this.btn_OpenDoor10.Visible = false;
             this.btn_OpenDoor10.Click += new System.EventHandler(this.btn_OpenDoor1_Click);
             // 
             // cb9
@@ -9219,6 +9288,7 @@ namespace Demo
             this.cb9.Tag = "1";
             this.cb9.Text = "常开";
             this.cb9.UseVisualStyleBackColor = false;
+            this.cb9.Visible = false;
             // 
             // door9
             // 
@@ -9228,6 +9298,7 @@ namespace Demo
             this.door9.Size = new System.Drawing.Size(20, 28);
             this.door9.TabIndex = 0;
             this.door9.UseVisualStyleBackColor = true;
+            this.door9.Visible = false;
             // 
             // btn_OpenDoor9
             // 
@@ -9240,6 +9311,7 @@ namespace Demo
             this.btn_OpenDoor9.Tag = "9";
             this.btn_OpenDoor9.Text = "开门";
             this.btn_OpenDoor9.UseVisualStyleBackColor = true;
+            this.btn_OpenDoor9.Visible = false;
             this.btn_OpenDoor9.Click += new System.EventHandler(this.btn_OpenDoor1_Click);
             // 
             // door_Group2
@@ -9290,6 +9362,7 @@ namespace Demo
             this.cb8.Tag = "1";
             this.cb8.Text = "常开";
             this.cb8.UseVisualStyleBackColor = false;
+            this.cb8.Visible = false;
             // 
             // door8
             // 
@@ -9299,6 +9372,7 @@ namespace Demo
             this.door8.Size = new System.Drawing.Size(20, 28);
             this.door8.TabIndex = 105;
             this.door8.UseVisualStyleBackColor = true;
+            this.door8.Visible = false;
             // 
             // btn_OpenDoor8
             // 
@@ -9311,6 +9385,7 @@ namespace Demo
             this.btn_OpenDoor8.Tag = "8";
             this.btn_OpenDoor8.Text = "开门";
             this.btn_OpenDoor8.UseVisualStyleBackColor = true;
+            this.btn_OpenDoor8.Visible = false;
             this.btn_OpenDoor8.Click += new System.EventHandler(this.btn_OpenDoor1_Click);
             // 
             // cb7
@@ -9332,6 +9407,7 @@ namespace Demo
             this.cb7.Tag = "1";
             this.cb7.Text = "常开";
             this.cb7.UseVisualStyleBackColor = false;
+            this.cb7.Visible = false;
             // 
             // door7
             // 
@@ -9341,6 +9417,7 @@ namespace Demo
             this.door7.Size = new System.Drawing.Size(20, 28);
             this.door7.TabIndex = 102;
             this.door7.UseVisualStyleBackColor = true;
+            this.door7.Visible = false;
             // 
             // btn_OpenDoor7
             // 
@@ -9353,6 +9430,7 @@ namespace Demo
             this.btn_OpenDoor7.Tag = "7";
             this.btn_OpenDoor7.Text = "开门";
             this.btn_OpenDoor7.UseVisualStyleBackColor = true;
+            this.btn_OpenDoor7.Visible = false;
             this.btn_OpenDoor7.Click += new System.EventHandler(this.btn_OpenDoor1_Click);
             // 
             // cb6
@@ -9374,6 +9452,7 @@ namespace Demo
             this.cb6.Tag = "1";
             this.cb6.Text = "常开";
             this.cb6.UseVisualStyleBackColor = false;
+            this.cb6.Visible = false;
             // 
             // door6
             // 
@@ -9383,6 +9462,7 @@ namespace Demo
             this.door6.Size = new System.Drawing.Size(20, 28);
             this.door6.TabIndex = 99;
             this.door6.UseVisualStyleBackColor = true;
+            this.door6.Visible = false;
             // 
             // btn_OpenDoor6
             // 
@@ -9395,6 +9475,7 @@ namespace Demo
             this.btn_OpenDoor6.Tag = "6";
             this.btn_OpenDoor6.Text = "开门";
             this.btn_OpenDoor6.UseVisualStyleBackColor = true;
+            this.btn_OpenDoor6.Visible = false;
             this.btn_OpenDoor6.Click += new System.EventHandler(this.btn_OpenDoor1_Click);
             // 
             // cb5
@@ -9416,6 +9497,7 @@ namespace Demo
             this.cb5.Tag = "1";
             this.cb5.Text = "常开";
             this.cb5.UseVisualStyleBackColor = false;
+            this.cb5.Visible = false;
             // 
             // door5
             // 
@@ -9425,6 +9507,7 @@ namespace Demo
             this.door5.Size = new System.Drawing.Size(20, 28);
             this.door5.TabIndex = 0;
             this.door5.UseVisualStyleBackColor = true;
+            this.door5.Visible = false;
             // 
             // btn_OpenDoor5
             // 
@@ -9437,6 +9520,7 @@ namespace Demo
             this.btn_OpenDoor5.Tag = "5";
             this.btn_OpenDoor5.Text = "开门";
             this.btn_OpenDoor5.UseVisualStyleBackColor = true;
+            this.btn_OpenDoor5.Visible = false;
             this.btn_OpenDoor5.Click += new System.EventHandler(this.btn_OpenDoor1_Click);
             // 
             // door_Group1
@@ -9487,6 +9571,7 @@ namespace Demo
             this.cb4.Tag = "1";
             this.cb4.Text = "常开";
             this.cb4.UseVisualStyleBackColor = false;
+            this.cb4.Visible = false;
             // 
             // door4
             // 
@@ -9496,6 +9581,7 @@ namespace Demo
             this.door4.Size = new System.Drawing.Size(20, 28);
             this.door4.TabIndex = 105;
             this.door4.UseVisualStyleBackColor = true;
+            this.door4.Visible = false;
             // 
             // btn_OpenDoor4
             // 
@@ -9508,6 +9594,7 @@ namespace Demo
             this.btn_OpenDoor4.Tag = "4";
             this.btn_OpenDoor4.Text = "开门";
             this.btn_OpenDoor4.UseVisualStyleBackColor = true;
+            this.btn_OpenDoor4.Visible = false;
             this.btn_OpenDoor4.Click += new System.EventHandler(this.btn_OpenDoor1_Click);
             // 
             // cb3
@@ -9529,6 +9616,7 @@ namespace Demo
             this.cb3.Tag = "1";
             this.cb3.Text = "常开";
             this.cb3.UseVisualStyleBackColor = false;
+            this.cb3.Visible = false;
             // 
             // door3
             // 
@@ -9538,6 +9626,7 @@ namespace Demo
             this.door3.Size = new System.Drawing.Size(20, 28);
             this.door3.TabIndex = 102;
             this.door3.UseVisualStyleBackColor = true;
+            this.door3.Visible = false;
             // 
             // btn_OpenDoor3
             // 
@@ -9550,6 +9639,7 @@ namespace Demo
             this.btn_OpenDoor3.Tag = "3";
             this.btn_OpenDoor3.Text = "开门";
             this.btn_OpenDoor3.UseVisualStyleBackColor = true;
+            this.btn_OpenDoor3.Visible = false;
             this.btn_OpenDoor3.Click += new System.EventHandler(this.btn_OpenDoor1_Click);
             // 
             // cb2
@@ -9571,6 +9661,7 @@ namespace Demo
             this.cb2.Tag = "1";
             this.cb2.Text = "常开";
             this.cb2.UseVisualStyleBackColor = false;
+            this.cb2.Visible = false;
             // 
             // door2
             // 
@@ -9580,6 +9671,7 @@ namespace Demo
             this.door2.Size = new System.Drawing.Size(20, 28);
             this.door2.TabIndex = 99;
             this.door2.UseVisualStyleBackColor = true;
+            this.door2.Visible = false;
             // 
             // btn_OpenDoor2
             // 
@@ -9592,6 +9684,7 @@ namespace Demo
             this.btn_OpenDoor2.Tag = "2";
             this.btn_OpenDoor2.Text = "开门";
             this.btn_OpenDoor2.UseVisualStyleBackColor = true;
+            this.btn_OpenDoor2.Visible = false;
             this.btn_OpenDoor2.Click += new System.EventHandler(this.btn_OpenDoor1_Click);
             // 
             // cb1
@@ -9613,6 +9706,7 @@ namespace Demo
             this.cb1.Tag = "1";
             this.cb1.Text = "常开";
             this.cb1.UseVisualStyleBackColor = false;
+            this.cb1.Visible = false;
             // 
             // door1
             // 
@@ -9622,6 +9716,7 @@ namespace Demo
             this.door1.Size = new System.Drawing.Size(20, 28);
             this.door1.TabIndex = 0;
             this.door1.UseVisualStyleBackColor = true;
+            this.door1.Visible = false;
             // 
             // btn_OpenDoor1
             // 
@@ -9634,6 +9729,7 @@ namespace Demo
             this.btn_OpenDoor1.Tag = "1";
             this.btn_OpenDoor1.Text = "开门";
             this.btn_OpenDoor1.UseVisualStyleBackColor = true;
+            this.btn_OpenDoor1.Visible = false;
             this.btn_OpenDoor1.Click += new System.EventHandler(this.btn_OpenDoor1_Click);
             // 
             // tabPage4
@@ -10144,16 +10240,6 @@ namespace Demo
         private System.Windows.Forms.DataGridViewTextBoxColumn 结束日期;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 波特率;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 备注;
         private System.Windows.Forms.DataGridViewTextBoxColumn 流水编号1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
@@ -10789,6 +10875,16 @@ namespace Demo
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn47;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn48;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn49;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 波特率;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 备注;
     }
 }
 

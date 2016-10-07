@@ -119,9 +119,9 @@ namespace Demo
         private void FrmMain_Load(object sender, EventArgs e)
         {
             btn_search_Click(null, null);
-            this.skinTabControl1.SelectedIndex = 6;
-            this.timer_GetData.Enabled = true;
-            this.timer_GetData.Tick += new EventHandler(timerSetTime_Tick);
+            skinTabControl1.SelectedIndex = 6;
+            //timer_GetData.Enabled = true;
+            //timer_GetData.Tick += new EventHandler(timerSetTime_Tick);  重要 记得取消注释
         }
 
 
@@ -214,7 +214,6 @@ namespace Demo
             if (txt_search_doorInfo.Text == "") txt_search_doorInfo.Text = "请输入查询条件进行数据检索";
         }
 
-
         private void txt_Search_DoorRange_MouseEnter(object sender, EventArgs e)
         {
             if (txt_Search_DoorRange.Text == "请输入查询条件进行数据检索") txt_Search_DoorRange.Text = "";
@@ -223,7 +222,6 @@ namespace Demo
         {
             if (txt_Search_DoorRange.Text == "") txt_Search_DoorRange.Text = "请输入查询条件进行数据检索";
         }
-
 
         private void txt_Log_MouseEnter(object sender, EventArgs e)
         {
@@ -1733,8 +1731,6 @@ WHERE DRGI.ID=" + id + " AND DRGI.ID=CGI.RIGHT_GROUP_ID AND CGI.CONTROLLER_ID=CI
         }
 
 
-
-
         private void Init_TimeInfo()
         {
             try
@@ -1762,7 +1758,6 @@ WHERE DRGI.ID=" + id + " AND DRGI.ID=CGI.RIGHT_GROUP_ID AND CGI.CONTROLLER_ID=CI
 
         }
 
-
         private void Save_TimeRange(int id, int com_NO, string bondRode)
         {
             try
@@ -1786,10 +1781,6 @@ WHERE DRGI.ID=" + id + " AND DRGI.ID=CGI.RIGHT_GROUP_ID AND CGI.CONTROLLER_ID=CI
                 throw;
             }
         }
-
- 
-
-
 
         private void btn_Save1_Click(object sender, EventArgs e)
         {
@@ -2427,6 +2418,9 @@ WHERE DRGI.ID=" + id + " AND DRGI.ID=CGI.RIGHT_GROUP_ID AND CGI.CONTROLLER_ID=CI
 
         private void Init_DoorGroup()
         {
+
+            DataTable dt = DataAccess.dataTable("select Controller_Name,controller_id,serialNO,bondRode from controller_info  order by controller_id");
+            //int c = dt.Rows.Count;
             for (int i = 1; i < 9; i++)
             {
                 GroupBox gb = (GroupBox)this.Controls.Find("door_Group" + i, true)[0];
@@ -2434,7 +2428,6 @@ WHERE DRGI.ID=" + id + " AND DRGI.ID=CGI.RIGHT_GROUP_ID AND CGI.CONTROLLER_ID=CI
             }
 
 
-            DataTable dt = DataAccess.dataTable("select Controller_Name,controller_id,serialNO,bondRode from controller_info  order by controller_id");
 
             string msg = "";
             if (dt.Rows.Count > 0)
@@ -2446,20 +2439,43 @@ WHERE DRGI.ID=" + id + " AND DRGI.ID=CGI.RIGHT_GROUP_ID AND CGI.CONTROLLER_ID=CI
                     string bondRode = dt.Rows[i]["bondRode"].ToString();
                     string group_Name = dt.Rows[i]["Controller_Name"].ToString();
                     string time = Common.Common.GetDateTime(ID, ComNO, bondRode, ref msg);
+                    DataTable doorTable = DataAccess.dataTable("select * from Door_Info where Controller_ID=" + ID);
+
+
                     GroupBox gb = (GroupBox)this.Controls.Find("door_Group" + (i + 1).ToString(), true)[0];
                     gb.Text = group_Name;
                     gb.Visible = true;
-                    if (msg.Substring(0, 2) == "失败")
+
+
+                    //gb.Enabled = false;
+                    for (int j = 1; j <= doorTable.Rows.Count; j++)
                     {
-                        gb.Enabled = false;
-                        for (int j = 1; j <= 4; j++)
-                        {
+                        //if (msg.Substring(0, 2) == "失败")
+                        //{
+                        //    Button bt = (Button)this.Controls.Find("door" + (i * 4 + j).ToString(), true)[0];
+                        //    bt.BackgroundImage = global::Demo.Properties.Resources.QQ截图20160425212322;
+                        //    bt.Enabled = false;
+                        //}
+                        //else
+                        //{
+                        //    Button bt = (Button)this.Controls.Find("door" + (i * 4 + j).ToString(), true)[0];
+                        //    bt.BackgroundImage = global::Demo.Properties.Resources.use;
+                        //    bt.Enabled = true;
 
-                            Button bt = (Button)this.Controls.Find("door" + (i * 4 + j).ToString(), true)[0];
-                            bt.BackgroundImage = global::Demo.Properties.Resources.QQ截图20160425212322;
-                        }
+                        //}
+
+                        Button bt = (Button)this.Controls.Find("door" + (i * 4 + j).ToString(), true)[0];
+                        Button bto = (Button)this.Controls.Find("btn_OpenDoor" + (i * 4 + j).ToString(), true)[0];
+                        CheckBox cb=(CheckBox)this.Controls.Find("cb" + (i * 4 + j).ToString(), true)[0];
+                        bt.BackgroundImage = global::Demo.Properties.Resources.use;
+                        bt.Enabled = true;
+                        bto.Enabled = true;
+                        cb.Enabled = true;
+                        bt.Visible = true;
+                        bto.Visible = true;
+                        cb.Visible = true;
+
                     }
-
                 }
             }
 
@@ -2603,7 +2619,7 @@ WHERE DRGI.ID=" + id + " AND DRGI.ID=CGI.RIGHT_GROUP_ID AND CGI.CONTROLLER_ID=CI
             }
         }
 
-
+       
     }
 
 }

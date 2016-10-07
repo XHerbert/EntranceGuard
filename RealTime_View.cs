@@ -164,7 +164,8 @@ namespace Demo
 
         private void InitControllers()
         {
-            DataTable dt = DataAccess.dataTable("select Controller_Name,controller_id,serialNO,bondRode from controller_info  order by controller_id");
+            //DataTable dt = DataAccess.dataTable("select Controller_Name,controller_id,serialNO,bondRode from controller_info  order by controller_id");
+            DataTable dt = DataAccess.dataTable("select Controller_Name,ID,serialNO,bondRode from controller_info  order by controller_id");
             int count = dt.Rows.Count;   
             controllerList = new Control[count];
 
@@ -215,10 +216,16 @@ namespace Demo
         private void InitData()
         {
             string query = "select Controller_ID,Controller_Name from Controller_Info";
+            //string query = "select ID,Controller_Name from Controller_Info";
             DataTable dt = DataAccess.dataTable(query);
+            if (dt.Rows.Count == 0)
+            {
+                return;
+            }
             BindControllerData(dt, controllerDrop);
-            int id = int.Parse(controllerDrop.SelectedValue.ToString());
+            int id = int.Parse(controllerDrop.SelectedValue.ToString());//无数据时此处会崩溃，重点
             string queryDoor = "select ID,Door_Name from Door_Info where Controller_ID="+id;
+            //string queryDoor = "select ID,Door_Name from Door_Info where ID="+id;
             DataTable dtDoor = DataAccess.dataTable(queryDoor);
             BindDoorData(dtDoor,doorDrop);
             postBack = true;
@@ -232,7 +239,8 @@ namespace Demo
         {
             box.DataSource = dt;
             box.DisplayMember = "Controller_Name";
-            box.ValueMember = "Controller_ID";
+           box.ValueMember = "Controller_ID";
+            // box.ValueMember = "ID";
         }
         
         private void BindDoorData(DataTable dt, ComboBox box)
@@ -248,6 +256,7 @@ namespace Demo
             if (!postBack) return;
             int id = int.Parse(controllerDrop.SelectedValue.ToString());
             string queryDoor = "select ID,Door_Name from Door_Info where Controller_ID=" + id;
+            //string queryDoor = "select ID,Door_Name from Door_Info where ID=" + id;
             DataTable dtDoor = DataAccess.dataTable(queryDoor);
             BindDoorData(dtDoor, doorDrop);
             //MessageBox.Show(controllerDrop.SelectedValue.ToString());
