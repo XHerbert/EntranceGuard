@@ -9,15 +9,17 @@ using System.Text;
 using System.Windows.Forms;
 using Demo.Controller;
 using System.Diagnostics;
+using System.Threading;
 
 
 
 namespace Demo
 {
+   
     public partial class RealTime_View : CCSkinMain
     {
 
-
+        private delegate void GetDataBk();
         #region 变量常量定义
         const int WIDTH = 100;
         const int HEIGHT = 120;
@@ -39,7 +41,7 @@ namespace Demo
         #endregion  构造函数
 
         #region 窗体加载
-
+        
         private void RealTime_View_Load(object sender, EventArgs e)
         {
             InitdrvCSS(dgv_Actions);
@@ -48,6 +50,21 @@ namespace Demo
             this.timer_GetData.Enabled = true;
             this.timer_GetData.Start();
             this.timer_GetData.Tick += new EventHandler(timerSetTime_Tick);
+            //ThreadStart st = new ThreadStart(timerSetTime_Tick);
+            //Action<object, EventArgs> fun =timerSetTime_Tick;
+            //ParameterizedThreadStart pt = new ParameterizedThreadStart(fun);
+
+            //ThreadStart ts = new ThreadStart(RunWithInvoke);
+            //Thread thread = new Thread(ts);
+            //thread.Start();
+
+            using (BackgroundWorker bw=new BackgroundWorker())
+            {
+                //bw.RunWorkerCompleted += complete;
+                bw.DoWork += timerSetTime_Tick;
+                bw.RunWorkerAsync();
+            }
+
         }
 
         #endregion 窗体加载
@@ -89,7 +106,7 @@ namespace Demo
 
 
             int controllerId = int.Parse(controllerDrop.SelectedValue.ToString());
-            int doorId = int.Parse(doorDrop.SelectedValue.ToString());
+            int doorId = int.Parse(doorDrop.SelectedValue.ToString())+1; //控制器门号从1开始，0不起作用
             DataTable dt = DataAccess.dataTable(string.Format("select controller_id,serialNO,bondRode from controller_info  where controller_id={0}  order by controller_id",controllerId));
 
 
@@ -390,15 +407,19 @@ namespace Demo
         #endregion 设置grid 样式
 
         #region 初始化进出资料
-
+        private delegate void DelFillData();
         private void Init_Data()
         {
-
             try
-            {
-                string sql = @"select al.id,ci.Controller_Name,al.place,al.Person_name,al.date_time,al.Action from Action_Log al,Controller_info ci where al.Controller_id=ci.Controller_ID  and al.Is_Readed='0'  order by al.id desc";
-                DataTable dt = DataAccess.dataTable(sql);
-                this.dgv_Actions.DataSource = dt.DefaultView;
+            {                
+                if (dgv_Actions.InvokeRequired)
+                {
+                    Invoke(new DelFillData(FillData));
+                }
+                else
+                {
+                    FillData();
+                }
             }
             catch (Exception ex)
             {
@@ -406,6 +427,13 @@ namespace Demo
                 MessageBox.Show("数据加载失败 ：" + ex.Message, "系统提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
+        }
+
+        private void FillData()
+        {
+            string sql = @"select al.id,ci.Controller_Name,al.place,al.Person_name,al.date_time,al.Action from Action_Log al,Controller_info ci where al.Controller_id=ci.Controller_ID  and al.Is_Readed='0'  order by al.id desc";
+            DataTable dt = DataAccess.dataTable(sql);
+            this.dgv_Actions.DataSource = dt.DefaultView;
         }
 
         #endregion 初始化进出资料
@@ -440,8 +468,32 @@ namespace Demo
         {
             Init_Data();
             GetInOutData();
+            Console.WriteLine("BackGroundWorker 取数据");
         }
 
+        /*
+        private void RunWithInvoke()
+        {
+            if (InvokeRequired)
+            {
+                this.Invoke(new GetDataBk(GetDataBackground));
+            }
+            else
+            {
+                GetDataBackground();
+            }
+        }
+        void GetDataBackground()
+        {
+            while (true)
+            {
+                Init_Data();
+                GetInOutData();
+                //Thread.Sleep(5000);
+                Console.WriteLine("后台取数据！");
+            }   
+        }
+        */
         #endregion 定时取数据
 
         #region 从控制器读取进出资料

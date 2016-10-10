@@ -120,8 +120,13 @@ namespace Demo
         {
             btn_search_Click(null, null);
             skinTabControl1.SelectedIndex = 6;
-            //timer_GetData.Enabled = true;
-            //timer_GetData.Tick += new EventHandler(timerSetTime_Tick);  重要 记得取消注释
+            timer_GetData.Enabled = true;
+            timer_GetData.Tick += new EventHandler(timerSetTime_Tick);  //重要 记得取消注释
+            using (BackgroundWorker worker=new BackgroundWorker())
+            {
+                worker.DoWork += timerSetTime_Tick;
+                worker.RunWorkerAsync();
+            }
         }
 
 
@@ -2223,22 +2228,33 @@ WHERE DRGI.ID=" + id + " AND DRGI.ID=CGI.RIGHT_GROUP_ID AND CGI.CONTROLLER_ID=CI
             }
         }
 
-
+        delegate void DelGetData();
         void timerSetTime_Tick(object sender, EventArgs e)
+        {
+            GetData();
+        }
+
+        private void GetData()
         {
             Init_Data();
             GetInOutData();
         }
 
+        private delegate void DelFillData();
 
         private void Init_Data()
         {
 
             try
             {
-                string sql = @"select al.id,ci.Controller_Name,al.place,al.Person_name,al.date_time,al.Action from Action_Log al,Controller_info ci where al.Controller_id=ci.Controller_ID  and al.Is_Readed='0'  order by al.id desc";
-                DataTable dt = DataAccess.dataTable(sql);
-                this.dgv_Actions.DataSource = dt.DefaultView;
+                if (this.dgv_Actions.InvokeRequired)
+                {
+                    Invoke(new DelFillData(FillData));
+                }
+                else
+                {
+                    FillData();
+                }
             }
             catch (Exception ex)
             {
@@ -2247,6 +2263,15 @@ WHERE DRGI.ID=" + id + " AND DRGI.ID=CGI.RIGHT_GROUP_ID AND CGI.CONTROLLER_ID=CI
             }
 
         }
+
+        private void FillData()
+        {
+            string sql = @"select al.id,ci.Controller_Name,al.place,al.Person_name,al.date_time,al.Action from Action_Log al,Controller_info ci where al.Controller_id=ci.Controller_ID  and al.Is_Readed='0'  order by al.id desc";
+            DataTable dt = DataAccess.dataTable(sql);
+            this.dgv_Actions.DataSource = dt.DefaultView;
+            Console.WriteLine("MainForm 取实时数据！");
+        }
+
 
         private void GetInOutData()
         {
